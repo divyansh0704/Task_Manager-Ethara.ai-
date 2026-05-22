@@ -12,8 +12,20 @@ app.use(cors(
 ))
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    // Manually pass the proper headers out on preflight checks
+    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 app.use(express.json())
-app.options('*', cors());
+
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
 
