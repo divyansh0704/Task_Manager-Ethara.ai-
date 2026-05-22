@@ -1,0 +1,265 @@
+/* Color token map from the shared Minimalist Dark Product system rules */
+:root {
+  --task-bg-main: #0B0F19;
+  --task-bg-surface: #151D30;
+  --task-bg-input: #1E293B;
+  --task-border: #334155;
+  --task-primary: #3B82F6;
+  --task-primary-glow: rgba(59, 130, 246, 0.4);
+  --task-text-bright: #F8FAFC;
+  --task-text-muted: #94A3B8;
+  --task-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.create-task-page-container {
+  background-color: var(--task-bg-main);
+  color: var(--task-text-bright);
+  min-height: 100vh;
+  padding: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Breadcrumb and Top Headers */
+.create-task-header {
+  margin-bottom: 36px;
+}
+
+.task-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--task-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.task-breadcrumb .material-icons { font-size: 1rem; }
+.task-breadcrumb .active-route { color: var(--task-primary); font-weight: 600; }
+
+.create-task-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.create-task-header p {
+  color: var(--task-text-muted);
+  font-size: 1.05rem;
+  max-width: 655px;
+  line-height: 1.5;
+}
+
+/* 🖥️ Layout Core Shell Structure */
+.create-task-layout-body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+.create-task-form-panel {
+  background-color: var(--task-bg-surface);
+  border: 1px solid var(--task-border);
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Inputs Structure Setup */
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--task-text-bright);
+}
+
+.form-input-group input[type="text"],
+.form-input-group textarea,
+.select-input-wrapper select,
+.select-input-wrapper input[type="date"] {
+  background-color: var(--task-bg-input);
+  border: 1px solid var(--task-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--task-text-bright);
+  font-family: inherit;
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: var(--task-transition);
+}
+
+.form-input-group input[type="text"]:focus,
+.form-input-group textarea:focus {
+  outline: none;
+  border-color: var(--task-primary);
+  box-shadow: 0 0 0 4px var(--task-primary-glow);
+}
+
+.form-input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Prefix Icon Form Input Wrappers */
+.select-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-input-wrapper select,
+.select-input-wrapper input[type="date"] {
+  padding-left: 42px;
+  appearance: none; /* Removes native browser select overrides */
+}
+
+.select-input-wrapper select:focus,
+.select-input-wrapper input[type="date"]:focus {
+  outline: none;
+  border-color: var(--task-primary);
+  box-shadow: 0 0 0 4px var(--task-primary-glow);
+}
+
+.select-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--task-text-muted);
+  font-size: 1.15rem;
+  pointer-events: none;
+}
+
+/* Footer Control Array Rows */
+.form-action-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+  border-top: 1px solid var(--task-border);
+  padding-top: 24px;
+}
+
+.btn-task-cancel {
+  background: transparent;
+  border: 1px solid var(--task-border);
+  color: var(--task-text-bright);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--task-transition);
+}
+
+.btn-task-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.btn-task-submit {
+  background-color: var(--task-primary);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--task-transition);
+}
+
+.btn-task-submit:hover {
+  background-color: #2563EB;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Desktop Sidebar Panels */
+.create-task-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-tip-card {
+  background-color: var(--task-bg-surface);
+  border: 1px solid var(--task-border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.tip-lightbulb {
+  color: #F59E0B;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.sidebar-tip-card h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sidebar-tip-card ul {
+  padding-left: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-tip-card li {
+  font-size: 0.85rem;
+  color: var(--task-text-muted);
+  line-height: 1.4;
+}
+
+.sidebar-insight-banner {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-left: 3px solid var(--task-primary);
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--task-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.sidebar-insight-banner blockquote {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--task-text-muted);
+  line-height: 1.4;
+}
+
+/* 💻 Responsive Interface Adaptations Queries */
+@media (max-width: 1024px) {
+  .create-task-layout-body { grid-template-columns: 1fr; }
+  .create-task-info-sidebar { display: none; } /* Hide tracking tips on small panels */
+}
+
+@media (max-width: 768px) {
+  .create-task-page-container { padding: 20px; }
+  .create-task-form-panel { padding: 24px; }
+  .form-input-grid { grid-template-columns: 1fr; gap: 20px; }
+  .form-action-row { flex-direction: column-reverse; gap: 12px; }
+  .btn-task-submit, .btn-task-cancel { width: 100%; justify-content: center; padding: 14px; }
+}

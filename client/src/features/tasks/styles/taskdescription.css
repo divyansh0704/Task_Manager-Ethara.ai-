@@ -1,0 +1,418 @@
+/* Stitch Micro-Component Design System Variables Override */
+:root {
+  --task-pane-bg: #0B111E;
+  --task-card-bg: #151D30;
+  --task-border: #1E293B;
+  --task-input-bg: #1A2337;
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --accent-blue-brand: #3B82F6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.15);
+  
+  --priority-orange: #F97316;
+  --status-blue: #60A5FA;
+}
+
+/* Master Pane Frame Shell Container Layout */
+.task-details-pane {
+  background-color: var(--task-pane-bg);
+  border: 1px solid var(--task-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 850px;
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+/* Top Branding Action Strip Bar Layout */
+.task-pane-header {
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--task-border);
+  background-color: rgba(11, 17, 30, 0.4);
+}
+
+.pane-back-btn, .pane-options-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pane-back-btn:hover, .pane-options-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pane-title-brand {
+  text-align: center;
+}
+
+.pane-title-brand h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.pane-sub-brand {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Core Internal Scroll Track Window */
+.task-pane-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar Customization Layout */
+.task-pane-scroll-content::-webkit-scrollbar {
+  width: 6px;
+}
+.task-pane-scroll-content::-webkit-scrollbar-thumb {
+  background-color: var(--task-border);
+  border-radius: 3px;
+}
+
+/* Badges Alignment Row Styles */
+.task-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.priority-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--priority-orange);
+  background-color: rgba(249, 115, 22, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.priority-pill .dot-indicator {
+  width: 5px;
+  height: 5px;
+  background-color: var(--priority-orange);
+  border-radius: 50%;
+}
+
+.status-text-indicator {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--status-blue);
+}
+
+/* Typography Main Headings block rules */
+.task-main-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
+}
+
+/* Centered Body Details Card Layout */
+.task-description-card {
+  background-color: var(--task-card-bg);
+  border: 1px solid var(--task-border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.task-description-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #CBD5E1;
+}
+
+/* Metadata Dual Split Grid Blueprint */
+.task-meta-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--task-border);
+  padding-bottom: 24px;
+}
+
+.meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-block-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.meta-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta-user-avatar {
+  width: 28px;
+  height: 28px;
+  background-color: var(--accent-blue-brand);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.meta-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta-user-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.meta-date-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #CBD5E1;
+}
+
+.calendar-icon {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.meta-date-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Input Trigger Status Dropdown Field Engine styling rules */
+.status-dropdown-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.btn-status-dropdown-trigger {
+  width: 100%;
+  background-color: rgba(96, 165, 250, 0.15);
+  color: #93C5FD;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-status-dropdown-trigger:hover {
+  background-color: rgba(96, 165, 250, 0.25);
+}
+
+.chevron-icon {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.status-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background-color: var(--task-card-bg);
+  border: 1px solid var(--task-border);
+  border-radius: 10px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  z-index: 10;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-item-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item-btn:hover {
+  background-color: var(--task-input-bg);
+  color: var(--text-primary);
+}
+
+.dropdown-item-btn.active-status {
+  background-color: var(--accent-blue-glow);
+  color: var(--accent-blue-brand);
+  font-weight: 600;
+}
+
+/* Task Activity Timelines Logs System */
+.task-activity-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-section-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.view-all-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.view-all-link-btn:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.activity-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.activity-timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.activity-icon-wrapper, .activity-icon-wrapper svg {
+  margin-top: 2px;
+  color: var(--text-secondary);
+}
+
+
+/* Setting specific styling properties for status updates inside timeline row items */
+.activity-timeline-item:has(.status-target-highlight) .activity-icon-wrapper svg {
+  color: #10B981; /* Matches state change validation checks */
+  padding: 3px;
+}
+
+.activity-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.activity-text-line {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: #94A3B8;
+}
+
+.user-bold {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.status-target-highlight {
+  color: #60A5FA;
+  font-weight: 600;
+}
+
+.activity-timestamp-label {
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+/* ==========================================================================
+   📱 MOBILE & TABLET FLEXIBLE RESPONSIVE OVERRIDES 
+   ========================================================================== */
+@media (max-width: 768px) {
+  .task-details-pane {
+    max-width: 100%;
+    border-radius: 0; /* Changes to a full edge view context format on mobile */
+    border: none;
+    max-height: 100vh;
+  }
+  
+  .task-pane-scroll-content {
+    padding: 20px;
+  }
+
+  .task-main-heading {
+    font-size: 1.35rem;
+  }
+
+  .task-meta-split-grid {
+    grid-template-columns: 1fr; /* Stack metadata arrays sequentially */
+    gap: 20px;
+  }
+}

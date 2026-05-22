@@ -1,0 +1,239 @@
+/* Token Palette matching your Minimalist Dark Product theme rules */
+:root {
+  --modal-backdrop: rgba(3, 7, 18, 0.85);
+  --modal-bg: #151D30;
+  --modal-input: #1E293B;
+  --primary-accent: #3B82F6;
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  --text-bright: #F8FAFC;
+  --text-muted: #94A3B8;
+  --ui-border: #334155;
+}
+
+/* Modal screen blur framework covering viewport */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Center Glass-morphic Panel */
+.modal-card {
+  background-color: var(--modal-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: modalScaleIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Top Branding Bar Layout */
+.modal-header {
+  padding: 24px 24px 18px 24px;
+  border-bottom: 1px solid var(--ui-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-title-area {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.invite-icon {
+  color: var(--primary-accent);
+  background-color: rgba(59, 130, 246, 0.1);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.35rem;
+}
+
+.modal-title-area h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  color: var(--text-bright);
+}
+
+.project-subtext {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.project-subtext span {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+.modal-close-x {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.modal-close-x:hover {
+  color: var(--text-bright);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Inner Layout Formatting */
+.modal-body-form {
+  padding: 24px;
+}
+
+.modal-input-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.modal-input-field-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.modal-field-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.modal-field-wrapper input {
+  width: 100%;
+  background-color: var(--modal-input);
+  border: 1px solid var(--ui-border);
+  border-radius: 8px;
+  padding: 12px 16px 12px 42px;
+  color: var(--text-bright);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.modal-field-wrapper input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.mail-field-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  pointer-events: none;
+}
+
+.field-hint-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Action Control Array Footers */
+.modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-modal-submit, .btn-modal-cancel {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-submit {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-modal-submit:hover:not(:disabled) {
+  background-color: #2563EB;
+}
+
+.btn-modal-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-modal-cancel {
+  background-color: transparent;
+  color: var(--text-bright);
+  border: 1px solid var(--ui-border);
+}
+
+.btn-modal-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Smooth Interactive Animation Keyframes */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile Bottom Sheet Responsive Overrides */
+@media (max-width: 480px) {
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-card {
+    border-radius: 16px 16px 0 0;
+    animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .modal-footer-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .btn-modal-submit, .btn-modal-cancel {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  @keyframes modalSlideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+}
