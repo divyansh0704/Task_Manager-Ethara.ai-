@@ -11,7 +11,7 @@ const cors = require("cors")
 //     }
 // ))
 const corsOptions = {
-  origin: ['http://localhost:5173',"https://task-manager-ethara-ai-lilac.vercel.app/"],
+  origin: ['http://localhost:5173',"https://task-manager-ethara-ai-lilac.vercel.app"],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
@@ -21,7 +21,7 @@ app.use(cors(corsOptions));
 app.use((req, res, next) => {
   if (req.method === 'OPTIONS') {
     // Manually pass the proper headers out on preflight checks
-    res.header('Access-Control-Allow-Origin', 'https://task-manager-ethara-ai-lilac.vercel.app/');
+    res.header('Access-Control-Allow-Origin', 'https://task-manager-ethara-ai-lilac.vercel.app');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept');
     res.header('Access-Control-Allow-Credentials', 'true');
