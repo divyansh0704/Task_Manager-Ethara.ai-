@@ -8,10 +8,12 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
 app.use(cors(
     {
-        origin:"http://localhost:5173",
+        origin:["http://localhost:5173", "https://taskmanager-etharaai-production.up.railway.app"],
         credentials:true
     }
 ))
+
+
 
 //require all routes here
 const authRoutes = require("./routes/authRoutes")
