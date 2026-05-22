@@ -33,7 +33,7 @@ const registerUser = async (req, res) => {
 
         )
         res.cookie("token", token, {
-        // httpOnly: true,
+        httpOnly: true,
         secure: true,
         sameSite: "none"
     })
@@ -83,7 +83,7 @@ const loginUser = async (req, res) => {
 
     )
     res.cookie("token", token, {
-        // httpOnly: true,
+        httpOnly: true,
         secure: true,
         sameSite: "none"
     })

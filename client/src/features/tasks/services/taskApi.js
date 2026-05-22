@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://taskmanager-etharaai-production.up.railway.app/api",
+    baseURL: "https://task-manager-ethara-ai-yor6.onrender.com/api",
     withCredentials: true
 });
 
