@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL:"https://task-manager-ethara-ai-yor6.onrender.com/api",
+    baseURL:"https://task-manager-ethara-ai-ua77.onrender.com/api",
     withCredentials:true
 })
 
