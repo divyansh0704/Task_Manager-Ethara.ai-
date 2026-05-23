@@ -126,7 +126,7 @@ const Tasks = () => {
                                             </td>
                                             <td>
                                                 <div className="assignee-cell-wrapper">
-                                                    <div className="assignee-avatar">{task.assignedTo.name.charAt(0).toUpperCase()}</div>
+                                                    <div className="assignee-avatar">{task.assignedTo.name?.charAt(0)?.toUpperCase()}</div>
                                                     <span>{task.assignedTo.name}</span>
                                                 </div>
                                             </td>
@@ -157,7 +157,7 @@ const Tasks = () => {
 
                                     <div className="mobile-card-bottom-row">
                                         <div className="mobile-assignee">
-                                            <div className="assignee-avatar">{task.assignedTo.name.charAt(0).toUpperCase()}</div>
+                                            <div className="assignee-avatar">{task.assignedTo.name?.charAt(0)?.toUpperCase()}</div>
                                             <span>{task.assignedTo.name}</span>
                                         </div>
                                         <div className="mobile-date">

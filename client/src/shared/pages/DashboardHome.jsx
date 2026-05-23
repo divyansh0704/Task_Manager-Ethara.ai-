@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ClipboardList, CheckCircle, Hourglass, XCircle } from 'lucide-react';
 import "../styles/dashboard.css"
 import { useAuth } from '../../features/Auth/hooks/useAuth';
 import { useProject } from '../../features/projects/hooks/useProject';
 import { useTask } from '../../features/tasks/hooks/useTask';
+import { TaskContext } from '../../features/tasks/TaskContext';
 
 const DashboardHome = () => {
-  const {tasks,loadingT} = useTask();
+  // const {tasks,loadingT} = useTask();
+  const {tasks,loadingT}= useContext(TaskContext);
   
   const completedTasks = tasks.filter(task => task.status === "completed");
   const inProgressTasks = tasks.filter(task => task.status === "in-progress");
