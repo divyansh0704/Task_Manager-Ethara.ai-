@@ -46,15 +46,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: "createtask",
-                element: <Protected> <CreateTask />  </Protected>
+                element:  <CreateTask />  
             },
             {
                 path: "addproject",
-                element: <Protected><CreateProject /></Protected>
+                element: <CreateProject />
             },
             {
                 path: "tasks/:taskId",
-                element: <Protected> <TaskDescription/> </Protected>
+                element:  <TaskDescription/> 
             }
         ]
     }

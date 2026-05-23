@@ -21,7 +21,7 @@ const Tasks = () => {
         return matchesSearch && matchesStatus;
     });
     if(loadingT){
-         <main><h1>Loading...</h1></main>
+        <main><h1>Loading...</h1></main>
     }
     return (
         <div className="tasks-page-container">

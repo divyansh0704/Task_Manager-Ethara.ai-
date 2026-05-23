@@ -33,7 +33,10 @@ const Project = () => {
     // console.log(projectId);
   }
 
-  if (loadingP) return <main><h1>Loading...</h1></main>;
+  if (loadingP){
+    <main><h1>Loading...</h1></main>;
+
+  } 
 
 
   return (

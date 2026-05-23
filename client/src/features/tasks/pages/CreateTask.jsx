@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTask } from "../hooks/useTask"
 import { useContext } from 'react'
 import { AuthContext } from '../../Auth/AuthContext'
+import { ProjectContext } from '../../projects/ProjectContext'
 import { useProject } from "../../projects/hooks/useProject"
 import "../styles/createtask.css"
 import { useAuth } from "../../Auth/hooks/useAuth"
@@ -17,8 +18,10 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 
 const CreateTask = () => {
-    const { members,loading} = useAuth();
-    const { projects,loadingP } = useProject();
+    // const { members,loading} = useAuth();
+    // const { projects,loadingP } = useProject();
+    const { members } = useContext(AuthContext)
+    const {projects} = useContext(ProjectContext)
     const { handleCreateTask,loadingT } = useTask();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -49,7 +52,7 @@ const CreateTask = () => {
         navigate('/tasks');
 
     }
-    if(loading || loadingT || loadingP){
+    if( loadingT ){
         <main><h1>Loading...</h1></main>
 
     }
