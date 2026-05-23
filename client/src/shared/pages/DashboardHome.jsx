@@ -7,16 +7,17 @@ import { useTask } from '../../features/tasks/hooks/useTask';
 import { TaskContext } from '../../features/tasks/TaskContext';
 
 const DashboardHome = () => {
-  // const {tasks,loadingT} = useTask();
-  const {tasks,loadingT}= useContext(TaskContext);
+  const {tasks,loadingT} = useTask();
+  // const {tasks,loadingT}= useContext(TaskContext);
+  // const {loading} = useAuth();
   
   const completedTasks = tasks.filter(task => task.status === "completed");
   const inProgressTasks = tasks.filter(task => task.status === "in-progress");
   const overdueTasks = tasks.filter(task => task.status === "overdue");
   const todoTasks = tasks.filter(task => task.status === "todo");
 
-  if(loadingT){
-    <main><h1>Loading...</h1></main>
+  if(loadingT ){
+    return <main><h1>Loading...</h1></main>
   }
 
 

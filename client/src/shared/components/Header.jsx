@@ -2,9 +2,12 @@ import React from 'react';
 import '../styles/dashboard.css';
 import { Search, Bell, Settings, Menu } from 'lucide-react';
 import { useAuth } from '../../features/Auth/hooks/useAuth';
+import {useContext} from 'react'
+import { AuthContext } from '../../features/Auth/AuthContext';
 
 const Header = ({ toggleMenu }) => {
-  const { user } = useAuth();
+  const { user } = useContext(AuthContext);
+  
 
   return (
     <header className="global-workspace-header">

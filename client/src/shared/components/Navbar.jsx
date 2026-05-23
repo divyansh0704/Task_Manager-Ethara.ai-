@@ -1,26 +1,29 @@
 import React from 'react';
-import { NavLink,useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../features/Auth/hooks/useAuth';
 import '../styles/dashboard.css';
-import { 
-  LayoutDashboard, 
-  FolderClosed, 
-  ClipboardList, 
-  Rocket, 
-  CircleHelp, 
-  LogOut, 
-  Plus 
+import {
+  LayoutDashboard,
+  FolderClosed,
+  ClipboardList,
+  Rocket,
+  CircleHelp,
+  LogOut,
+  Plus
 } from 'lucide-react';
 
 const Navbar = ({ isOpen, toggleMenu }) => {
 
-    const navigate = useNavigate();
-    const {handleLogout} = useAuth();
-    
-        const handleClick = async () => {
-            await handleLogout();
-        }
-        
+  const navigate = useNavigate();
+  const { handleLogout,loading } = useAuth();
+
+  const handleClick = async () => {
+    await handleLogout();
+  }
+  // if(loading){
+  //   return <main><h1>Loading...</h1></main>;
+  // }
+
   return (
     <nav className={`app-sidebar ${isOpen ? 'drawer-open' : ''}`}>
       <div className="sidebar-brand">
@@ -65,7 +68,7 @@ const Navbar = ({ isOpen, toggleMenu }) => {
       </ul>
 
       <div className="sidebar-footer-actions">
-        <button onClick={()=>{navigate("/createtask")}} className="btn-sidebar-action">
+        <button onClick={() => { navigate("/createtask") }} className="btn-sidebar-action">
           <Plus size={18} />
           <span>Create Task</span>
         </button>

@@ -26,35 +26,35 @@ export const router = createBrowserRouter([
 
     {
         path: "/",
-        element: <Protected><DashboardLayout /></Protected>,
+        element: <DashboardLayout />,
         children: [
             {
                 index: true,
-                element: <DashboardHome />
+                element:<Protected><DashboardHome /></Protected> 
             },
             {
                 path: "dashboard",
-                element: <DashboardHome />
+                element:<Protected><DashboardHome /></Protected> 
             },
             {
                 path: "projects",
-                element: <Project />
+                element:<Protected><Project /></Protected> 
             },
             {
                 path: "tasks",
-                element: <Tasks />
+                element:<Protected> <Tasks /></Protected>
             },
             {
                 path: "createtask",
-                element:  <CreateTask />  
+                element: <Protected><CreateTask />  </Protected> 
             },
             {
                 path: "addproject",
-                element: <CreateProject />
+                element:<Protected><CreateProject /></Protected> 
             },
             {
                 path: "tasks/:taskId",
-                element:  <TaskDescription/> 
+                element: <Protected> <TaskDescription/> </Protected>
             }
         ]
     }
