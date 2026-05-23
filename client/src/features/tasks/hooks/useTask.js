@@ -5,50 +5,50 @@ import { createTask, getTasks ,getTask,updateTask} from "../services/taskApi";
 
 export const useTask = () => {
     const context = useContext(TaskContext);
-    const {loading,setLoading,tasks,setTasks,task,setTask} = context;
+    const {loadingT,setLoadingT,tasks,setTasks,task,setTask} = context;
 
     const handleCreateTask = async({title,description,project,assignedTo,dueDate,priority})=>{
-        setLoading(true);
+        setLoadingT(true);
         try {
             const data = await createTask({title,description,project,assignedTo,dueDate,priority});
             setTasks([...tasks,data.task]);
-            setLoading(false);
+            setLoadingT(false);
         } catch (error) {
             console.error("Error creating project:", error);
-            setLoading(false);
+            setLoadingT(false);
         }
     }
     const handleGetTasks = async()=>{
-        setLoading(true);
+        setLoadingT(true);
         try {
             const data = await getTasks();
             setTasks(data.tasks);
-            setLoading(false);
+            setLoadingT(false);
         } catch (error) {
             console.error("Error fetching projects:", error);
-            setLoading(false);
+            setLoadingT(false);
         }
     }
     const handleGetTask = async(taskId)=>{
-        setLoading(true);
+        setLoadingT(true);
         try {
             const data = await getTask(taskId);
             setTask(data.task);
-            setLoading(false);
+            setLoadingT(false);
         } catch (error) {
             console.error("Error fetching projects:", error);
-            setLoading(false);
+            setLoadingT(false);
         }
     }
     const handleUpdateTask = async(taskId,updatedData)=>{
-        setLoading(true);
+        // setLoadingT(true);
         try {
             const data = await updateTask(taskId,updatedData);
             setTask(data.task);
-            setLoading(false);
+            setLoadingT(false);
         } catch (error) {
             console.error("Error fetching projects:", error);
-            setLoading(false);
+            setLoadingT(false);
         }
     }
 
@@ -56,5 +56,5 @@ export const useTask = () => {
         handleGetTasks();
     },[])
 
-    return {handleCreateTask,loading,tasks,task,handleGetTask,handleUpdateTask}
+    return {handleCreateTask,loadingT,tasks,task,handleGetTask,handleUpdateTask}
 }

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Tasks = () => {
     
-    const { loading, tasks } = useTask();
+    const { loadingT, tasks } = useTask();
     const [searchQuery, setSearchQuery] = useState('');
     const [statusFilter, setStatusFilter] = useState('ALL');
     const navigate = useNavigate();
@@ -20,6 +20,9 @@ const Tasks = () => {
         const matchesStatus =  task.status === statusFilter || statusFilter === 'ALL' ;
         return matchesSearch && matchesStatus;
     });
+    if(loadingT){
+         <main><h1>Loading...</h1></main>
+    }
     return (
         <div className="tasks-page-container">
             {/* Upper Module Heading */}

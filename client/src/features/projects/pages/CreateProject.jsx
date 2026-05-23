@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 import { Rocket } from 'lucide-react';
 
 const CreateProject = () => {
-    const {loading,handleCreateProject} = useProject();
+    const {loadingP,handleCreateProject} = useProject();
     const [title,setTitle] = useState("");
     const [description,setDescription] = useState("");
     const navigate = useNavigate();
@@ -17,6 +17,9 @@ const CreateProject = () => {
         setDescription("");
         navigate("/projects");
 
+    }
+    if(loadingP){
+         <main><h1>Loading...</h1></main>
     }
     return (
         <div className="create-project-container">

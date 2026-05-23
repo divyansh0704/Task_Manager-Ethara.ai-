@@ -17,7 +17,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useProject } from '../hooks/useProject';
 
 const Project = () => {
-  const { loading, projects ,handleAddMember} = useProject();
+  const { loadingP, projects ,handleAddMember} = useProject();
   const [showAddMember, setShowAddMember] = useState(false)
   const [projectId,setProjectId]=useState("")
 
@@ -33,7 +33,7 @@ const Project = () => {
     // console.log(projectId);
   }
 
-  if (loading) return <main><h1>Loading...</h1></main>;
+  if (loadingP) return <main><h1>Loading...</h1></main>;
 
 
   return (

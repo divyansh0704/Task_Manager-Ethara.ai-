@@ -4,42 +4,42 @@ import { ProjectContext } from "../ProjectContext";
 
 export const useProject =()=>{
     const context = useContext(ProjectContext);
-    const {loading,setLoading,projects,setProjects} = context;
+    const {loadingP,setLoadingP,projects,setProjects} = context;
 
     const handleGetProjects = async()=>{
-        setLoading(true);
+        setLoadingP(true);
         try {
             const data = await getProjects();
             setProjects(data.projects);
-            setLoading(false);
+            setLoadingP(false);
         } catch (error) {
             console.error("Error fetching projects:", error);
-            setLoading(false);
+            setLoadingP(false);
         }
     }
     const handleCreateProject = async({title,description})=>{
-        setLoading(true);
+        setLoadingP(true);
         try {
             const data = await createProject({title,description});
             setProjects([...projects,data.project]);
-            setLoading(false);
+            setLoadingP(false);
         } catch (error) {
             console.error("Error creating project:", error);
-            setLoading(false);
+            setLoadingP(false);
         }
     }
     const handleAddMember = async({projectId,email})=>{
-        setLoading(true);
+        setLoadingP(true);
         try{
 
             const data = await addMember({projectId,email});
             // setProjects([...projects,data.project]);
-            setLoading(false);
+            setLoadingP(false);
 
 
         }catch(error){
             console.error("Error adding member:",error);
-            setLoading(false);
+            setLoadingP(false);
 
         }
 
@@ -52,5 +52,5 @@ export const useProject =()=>{
         
     },[])
 
-    return{loading,projects,handleCreateProject,handleAddMember};
+    return{loadingP,projects,handleCreateProject,handleAddMember};
 }

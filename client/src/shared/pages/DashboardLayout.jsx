@@ -7,6 +7,7 @@ import '../styles/dashboard.css';
 
 const DashboardLayout = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
 
   return (
     <div className={`dashboard-app-frame ${isMobileMenuOpen ? 'mobile-nav-expanded' : ''}`}>

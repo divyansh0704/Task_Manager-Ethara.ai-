@@ -7,13 +7,13 @@ export const ProjectContext = createContext();
 
 
 export const ProjectProvider = ({children}) => {
-    const [loading, setLoading] = useState(false);
+    const [loadingP, setLoadingP] = useState(false);
     const [projects, setProjects] = useState([]);
     //  const [showAddMember,setShowAddMember] = useState(false)
      
 
   return (
-    <ProjectContext.Provider value={{loading,setLoading,projects,setProjects}}>{children}</ProjectContext.Provider>
+    <ProjectContext.Provider value={{loadingP,setLoadingP,projects,setProjects}}>{children}</ProjectContext.Provider>
     
   )
 }

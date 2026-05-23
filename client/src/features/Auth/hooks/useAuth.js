@@ -44,9 +44,7 @@ export const useAuth = ()=>{
             const data = await getAllUser();
             setMembers(data.users);
             console.log(members)
-            
-            
-
+  
         } catch (error) {
             console.error("Error fetching users:", error);
             
@@ -58,6 +56,7 @@ export const useAuth = ()=>{
 
     useEffect(()=>{
         const getAndSetUser = async() =>{
+            
            
             try {
                 const data = await getUser();
@@ -70,8 +69,11 @@ export const useAuth = ()=>{
                 setLoading(false);
             }
         }
+        
         getAndSetUser();
-        // handleGetAllUser();
+        handleGetAllUser();
+        
+        
     },[]) 
 
     return {user,loading,handleLogin,handleRegister,handleLogout,handleGetAllUser,members}

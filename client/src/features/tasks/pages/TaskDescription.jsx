@@ -7,7 +7,7 @@ import { useTask } from '../hooks/useTask';
 
 const TaskDescription = () => {
     const { taskId } = useParams();
-    const { task, handleGetTask, loading,handleUpdateTask } = useTask();
+    const { task, handleGetTask, loadingT,handleUpdateTask } = useTask();
     const navigate = useNavigate();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const statuses = ["todo", "in-progress", "overdue", "completed"];
@@ -21,7 +21,7 @@ const TaskDescription = () => {
 
 
     }, [taskId]);
-    if (loading) return (
+    if (loadingT) return (
         <div className="task-details-pane">
             <div className="task-pane-scroll-content">
                 <h2>Loading task details...</h2>

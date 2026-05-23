@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTask } from "../hooks/useTask"
+import { useContext } from 'react'
+import { AuthContext } from '../../Auth/AuthContext'
 import { useProject } from "../../projects/hooks/useProject"
 import "../styles/createtask.css"
 import { useAuth } from "../../Auth/hooks/useAuth"
@@ -15,9 +17,9 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 
 const CreateTask = () => {
-    const { members, handleGetAllUser } = useAuth();
-    const { projects } = useProject();
-    const { handleCreateTask } = useTask();
+    const { members,loading} = useAuth();
+    const { projects,loadingP } = useProject();
+    const { handleCreateTask,loadingT } = useTask();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
@@ -47,10 +49,15 @@ const CreateTask = () => {
         navigate('/tasks');
 
     }
+    if(loading || loadingT || loadingP){
+        <main><h1>Loading...</h1></main>
 
-    useEffect(() => {
-        handleGetAllUser();
-    }, []);
+    }
+
+    // useEffect(() => {
+    //     handleGetAllUser();
+    // }, []);
+    
 
     return (
         <div className="create-task-page-container">

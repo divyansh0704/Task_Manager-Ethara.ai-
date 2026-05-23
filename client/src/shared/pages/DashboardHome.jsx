@@ -6,11 +6,18 @@ import { useProject } from '../../features/projects/hooks/useProject';
 import { useTask } from '../../features/tasks/hooks/useTask';
 
 const DashboardHome = () => {
-  const {tasks} = useTask();
+  const {tasks,loadingT} = useTask();
+  
   const completedTasks = tasks.filter(task => task.status === "completed");
   const inProgressTasks = tasks.filter(task => task.status === "in-progress");
   const overdueTasks = tasks.filter(task => task.status === "overdue");
   const todoTasks = tasks.filter(task => task.status === "todo");
+
+  if(loadingT){
+    <main><h1>Loading...</h1></main>
+  }
+
+
   
   return (
     <div className="dashboard-home-view">
